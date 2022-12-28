@@ -6,6 +6,7 @@ function App() {
     {RowsNumber : 1, RowsItems: "Feed Cat", RowsAssigned : "User One"}, 
     {RowsNumber : 2, RowsItems: "Get Haircut", RowsAssigned : "Thor"}, 
     {RowsNumber : 3, RowsItems: "Water Plants", RowsAssigned : "User One"}, 
+    {RowsNumber : 4, RowsItems: "Charge Phone Battery", RowsAssigned : "Thor"}, 
   ]
   return (
     <div className='mt-5 container'>
