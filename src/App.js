@@ -1,6 +1,5 @@
-
 import './App.css';
-import TodoRowsItem from './components/TodoRowsItem';
+import TodoTables from './components/TodoTables';
 
 function App() {
   const todos  = [
@@ -15,29 +14,7 @@ function App() {
         Your Todo's
         </div>
         <div className='card-body'>
-          <table className='table table-hover'>
-          <thead>
-            <tr>
-              <th scope='col'>#</th>
-              <th scope='col'>Description</th>
-              <th scope='col'>Asign</th>
-            </tr>
-          </thead>
-          <tbody>
-            <TodoRowsItem 
-                RowsNumber={todos[0].RowsNumber} 
-                RowsItems={todos[0].RowsItems} 
-                RowsAssigned={todos[0].RowsAssigned} />
-            <TodoRowsItem 
-                RowsNumber={todos[1].RowsNumber} 
-                RowsItems={todos[1].RowsItems} 
-                RowsAssigned={todos[1].RowsAssigned} />
-            <TodoRowsItem 
-                RowsNumber={todos[2].RowsNumber} 
-                RowsItems={todos[2].RowsItems} 
-                RowsAssigned={todos[2].RowsAssigned} />
-          </tbody>
-          </table>
+          <TodoTables todos={todos}/>
         </div>
       </div>
     </div>
