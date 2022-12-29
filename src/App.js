@@ -30,6 +30,13 @@ function App() {
       setTodos(todos => [...todos, newTodo]);
   }
 
+  const deleteTodo = (deleteTodoRowNumber)=>{
+    let filtered = todos.filter(function (value){
+      return value.RowsNumber !== deleteTodoRowNumber;
+    });
+    setTodos(filtered);
+
+  }
   return (
     <div className='mt-5 container'>
       <div className='card'>
@@ -37,9 +44,9 @@ function App() {
         Your Todo's
         </div>
         <div className='card-body'>
-          <TodoTables todos={todos}/>
+          <TodoTables todos={todos} deleteTodo={deleteTodo}/>
           <button className='btn btn-primary' onClick={
-            addTodo
+            addTodo 
           }>
             Add New Todo</button>
             <NewTodoForm addTodo={addTodo} />

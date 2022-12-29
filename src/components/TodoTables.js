@@ -19,6 +19,7 @@ function TodoTables (props){
                         RowsNumber = {todos.RowsNumber}
                         RowsItems  = {todos.RowsItems}
                         RowsAssigned = {todos.RowsAssigned}
+                        deleteTodo={props.deleteTodo}
                     />
                 )
             )}
