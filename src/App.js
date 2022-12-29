@@ -14,10 +14,12 @@ function App() {
     ]
   
   )
-  const addTodo = () =>{
+  const addTodo = (description, assigned) =>{
     if (todos.length>0){
       const newTodo = {
-        RowsNumber : todos.length+1, RowsItems: "Think todo", RowsAssigned : "From Click Event"
+        RowsNumber : todos.length+1, 
+        RowsItems: description, 
+        RowsAssigned : assigned
       }
       setTodos(todos => [...todos, newTodo]);
     }
@@ -34,7 +36,7 @@ function App() {
             addTodo
           }>
             Add New Todo</button>
-            <NewTodoForm/>
+            <NewTodoForm addTodo={addTodo} />
         </div>
       </div>
     </div>
