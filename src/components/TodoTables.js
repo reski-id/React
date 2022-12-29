@@ -15,9 +15,10 @@ function TodoTables (props){
             {props.todos.map(
                 todos => (
                     <TodoRowsItem
-                    RowsNumber = {todos.RowsNumber}
-                    RowsItems  = {todos.RowsItems}
-                    RowsAssigned = {todos.RowsAssigned}
+                        key={todos.RowsNumber}
+                        RowsNumber = {todos.RowsNumber}
+                        RowsItems  = {todos.RowsItems}
+                        RowsAssigned = {todos.RowsAssigned}
                     />
                 )
             )}

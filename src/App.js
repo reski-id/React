@@ -15,15 +15,21 @@ function App() {
   
   )
   const addTodo = (description, assigned) =>{
+    let RowsNumber = 0 ;
+
     if (todos.length>0){
+      RowsNumber = todos[todos.length -1].RowsNumber+1;
+    }else{
+      RowsNumber = 1;
+    }
       const newTodo = {
-        RowsNumber : todos.length+1, 
+        RowsNumber : RowsNumber, 
         RowsItems: description, 
         RowsAssigned : assigned
-      }
+      };
       setTodos(todos => [...todos, newTodo]);
-    }
   }
+
   return (
     <div className='mt-5 container'>
       <div className='card'>
