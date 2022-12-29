@@ -4,6 +4,8 @@ import NewTodoForm from './components/NewTodoForm';
 import TodoTables from './components/TodoTables';
 
 function App() {
+  const [showAddTodoForm, setshowAddTodoForm] = useState(false);
+
   const  [todos, setTodos]  = useState(
     [
       {RowsNumber : 1, RowsItems: "Feed Cat", RowsAssigned : "User One"}, 
@@ -45,11 +47,12 @@ function App() {
         </div>
         <div className='card-body'>
           <TodoTables todos={todos} deleteTodo={deleteTodo}/>
-          <button className='btn btn-primary' onClick={
-            addTodo 
-          }>
-            Add New Todo</button>
+          <button className='btn btn-primary' onClick={ () => setshowAddTodoForm(!showAddTodoForm)}>
+            {showAddTodoForm ? "Close New Todo":"New Todo"}</button>
+          {/* conditional rendering */}
+          {showAddTodoForm && 
             <NewTodoForm addTodo={addTodo} />
+          }
         </div>
       </div>
     </div>
