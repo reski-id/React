@@ -4,17 +4,7 @@ import React, {useState} from "react"
 function NewTodoForm() {
     const [description, setDescription] = useState('');
     const [assigned, setAssigned] = useState('');
-
-    const DescriptionChange=(event)=>{
-        console.log("Description", event.target.value)
-        setDescription(event.target.value)
-    }
-
-    const AssignedChange=(event)=>{
-        console.log("Asigneed to", event.target.value)
-        setAssigned(event.target.value)
-    }
-    
+ 
     return (
         <div className="mt-5">
             <form>
@@ -24,7 +14,7 @@ function NewTodoForm() {
                         type="text" 
                         className="form-control" 
                         required 
-                        onChange={AssignedChange}
+                        onChange={e => setAssigned(e.target.value)}
                         value={assigned}
                         ></input>
                 </div>
@@ -35,7 +25,7 @@ function NewTodoForm() {
                         className="form-control" 
                         rows={3} 
                         required
-                        onChange={DescriptionChange}
+                        onChange={e => setDescription(e.target.value)}
                         value={description}
                     ></textarea>
                 </div>
